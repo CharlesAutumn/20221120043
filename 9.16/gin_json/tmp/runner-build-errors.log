@@ -1,0 +1,4 @@
+# gin_study/gin_json
+.\main.go:36:10: not enough arguments in call to c.JSON
+	have (number)
+	want (int, any)
