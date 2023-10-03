@@ -1,0 +1,34 @@
+basePath: /index
+definitions:
+  main.Response:
+    properties:
+      code:
+        description: 响应码
+        type: integer
+      data:
+        description: 具体数据
+      msg:
+        description: 描述
+        type: string
+    type: object
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: 这是一个测试
+  title: 测试API文档
+  version: "1.0"
+paths:
+  /api/users:
+    get:
+      description: 返回一个用户列表，可根据查询参数指定
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: 用户列表
+      tags:
+      - 用户管理
+swagger: "2.0"
