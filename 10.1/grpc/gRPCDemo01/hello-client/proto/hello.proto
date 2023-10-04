@@ -1,0 +1,19 @@
+syntax = "proto3"; //这个地方就是声明一下使用proto3的语法，2023年3是最新的
+
+option go_package =".;service";//这个名字想写什么就写什么不影响
+//这部分内容是表示最后生成的go文件是处在哪个目录哪个包下，
+// . 表示当前目录下生成，service表示生成的go文件的包名是service
+
+service SayHello{
+  rpc SayHello(HelloRequest) returns (HelloResponse){}
+}
+
+
+//message可以理解为go语言中的结构体
+//注意不是赋值操作而是消息号，只是一个标记，要继续进行累加操作
+message HelloRequest{
+  string requestName = 1;
+}
+message HelloResponse{
+  string responseMsg = 1;
+}
