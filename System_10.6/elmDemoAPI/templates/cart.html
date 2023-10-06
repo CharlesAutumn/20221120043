@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>购物车</title>
+</head>
+<body>
+<h1>购物车</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>价格</th>
+        <th>类别</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ range $index, $item := .cart }}
+        <tr>
+            <td>{{ $item.ID }}</td>
+            <td>{{ $item.Name }}</td>
+            <td>{{ $item.Price }}</td>
+            <td>{{ $item.Category }}</td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>
+<a href="/checkout">去结算</a>
+<a href="/">不够吃，再买点</a>
+</body>
+</html>

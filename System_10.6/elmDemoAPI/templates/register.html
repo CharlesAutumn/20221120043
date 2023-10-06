@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户注册</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<h1>用户注册</h1>
+<form action="/register" method="POST">
+    <div>
+        <label for="username">用户名：</label>
+        <input type="text" id="username" name="username">
+    </div>
+    <div>
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <div>
+        <input type="submit" value="注册">
+    </div>
+    <div class="error">{{.Error}}</div>
+</form>
+</body>
+</html>

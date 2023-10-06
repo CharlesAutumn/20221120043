@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>结算</title>
+</head>
+<body>
+<h1>结算</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>价格</th>
+        <th>类别</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ range $index, $item := .cart }}
+        <tr>
+            <td>{{ $item.ID }}</td>
+            <td>{{ $item.Name }}</td>
+            <td>{{ $item.Price }}</td>
+            <td>{{ $item.Category }}</td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>
+<p>总价: {{ .totalPrice }}</p>
+<p>运费: {{ .shippingFee }}</p>
+<p>总计: {{ .totalPricePlusShipping }}</p>
+</body>
+</html>

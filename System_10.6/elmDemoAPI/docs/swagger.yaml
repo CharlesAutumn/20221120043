@@ -1,0 +1,9 @@
+basePath: /index
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: 简易系统
+  title: elm
+  version: "1.0"
+paths: {}
+swagger: "2.0"

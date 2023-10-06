@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>菜单</title>
+</head>
+<body>
+<h1>菜单</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>名字</th>
+        <th>价格</th>
+        <th>种类</th>
+        <th>操作</th>
+    </tr>
+    {{ range .dishes }}
+        <tr>
+            <td>{{ .ID }}</td>
+            <td>{{ .Name }}</td>
+            <td>{{ .Price }}</td>
+            <td>{{ .Category }}</td>
+            <td>
+                <a href="/delete-dish/{{ .ID }}">删除</a>
+                <a href="/update-dish/{{ .ID }}">更新</a>
+            </td>
+        </tr>
+    {{ end }}
+</table>
+<br>
+<a href="/add-dish">添加菜品</a>
+<form action="/add-to-cart" method="POST">
+    <label for="dishID">菜品ID:</label>
+    <input type="number" id="dishID" name="dishID" required><br>
+
+    <input type="submit" value="加入购物车">
+</form>
+</body>
+</html>
